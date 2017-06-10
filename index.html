@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title>Merge JSON using JQuery</title>
+  <meta name="description" content="dy">
+  <meta name="author" content="dy">
+  <style>
+    body {
+        text-align:center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    }
+    textarea {
+        resize:none;
+        width:48vw;
+        height:90vh;
+        font-family: 'Comic Sans MS';
+    }
+    button {
+        width:97vw;
+        min-height: 7vh;
+        font-size:22px;
+        font-family: inherit;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>merge json</h1>
+  <button id="go" onclick="mergeobj()" style="background-color: #00ffff">merge</button>
+  <br/>
+  <textarea id="json1">{"789":"789"}</textarea>
+  <textarea id="json2">{"123":123}</textarea>
+</body>
+<script>
+    var text = [
+        document.getElementById("json1"),
+        document.getElementById("json2")
+    ]
+    function mergeobj(){
+        text[0].value=JSON.stringify($.extend(true, JSON.parse(text[0].value), JSON.parse(text[1].value)), null, 2)
+    }
+</script>
+</html>
