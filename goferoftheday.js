@@ -1,6 +1,6 @@
 function GoferOfTheDay(elementid) {
 	
-	var API_RESOURCE_URL = "https://dzhoou.github.io/resources.json"
+    var API_RESOURCE_URL = "https://gopherize.me/api/artwork/"
         API_SAVE_URL = "https://gopherize.me/save?images="
         API_BUCKET_URL = "https://storage.googleapis.com/gopherizeme.appspot.com/"
         API_REGEX = /<img class='big-gopher' src='(.*)'>/g
