@@ -68,6 +68,22 @@ function GoferOfTheDay(elementid) {
             if (imgnum == 0) {
                 alert("CONGRATS! YOU'VE GOT AN INVISIBLE GOFER!!!")
                 classification = "highly_improbable_cloaked_gofer"
+                var c=document.getElementById(elementid);
+                var ctx=c.getContext("2d");
+                ctx.canvas.width = 500
+                ctx.canvas.height = 500
+                ctx.scale(SCALE,SCALE)
+                ctx.font = "450px Courier New";
+                ctx.fillStyle="white"
+                ctx.textAlign = "center";
+                ctx.fillText("nil",525,550)
+                var level=document.getElementById(elementid+"_level")
+                if(level){
+                    level.innerHTML = 'gofer_level := "'+imgnum+'" <span class="comment">// min:"0", max:"'+data.categories.length+'"</span><br/>gofer_classification := "'+classification+'"'
+                    level.style.opacity="1"
+                    objs["level"]=level
+                }
+                return this
             } else if (imgnum<4 && classification.length==0) {
                 // ghost/eyeless gofers cannot be spartan
                 classification = "spartan_gofer"
