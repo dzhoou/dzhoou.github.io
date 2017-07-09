@@ -41,10 +41,10 @@ function GoferOfTheDay(elementid) {
                 var skip = Math.floor(Math.random() * 101) < chance
                 if (skip) {
                     switch (i){
-                        case 0:
+                        case "0":
                             classification = "ghost_gofer"
                             break
-                        case 1:
+                        case "1":
                             if(classification.length==0){
                                 classification += ", eyeless_gofer"
                             } else {
