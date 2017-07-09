@@ -13,7 +13,8 @@ function GoferOfTheDay(elementid) {
         emptyChance = [1, 1, 20, 50, 50, 50, 50, 90],
         imgnum = 0,
         imgloaded = 0,
-        imgs = []
+        imgs = [],
+        objs={}
 
 	// ensure that new has been used
 	if (!(this instanceof GoferOfTheDay)) {
@@ -57,7 +58,8 @@ function GoferOfTheDay(elementid) {
             }
             var level=document.getElementById(elementid+"_level")
             if(level){
-                level.innerHTML = '"'+imgnum+'"'
+                level.innerHTML = 'gofer_level := "'+imgnum+'" <span class="comment">// min:"0", max:"'+data.categories.length+'"</span>'
+                objs["level"]=level
             }
             setTimeout(WaitImageLoadAndDraw, 40);
         },
@@ -94,9 +96,8 @@ function GoferOfTheDay(elementid) {
         }
         //add animation class to canvas
         c.classList.add("floatup")
-        var levelline=document.getElementById(elementid+"_levelline");
-        if(levelline){
-            levelline.classList.add("floatup2")
+        if(objs["level"]){
+            objs["level"].classList.add("floatup2")
         }
     }
 	return this;	
