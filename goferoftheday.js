@@ -37,7 +37,7 @@ function GoferOfTheDay(elementid) {
                 if (!chance){
                     chance = 70
                 }
-                var skip = Math.ceil(Math.random() * 101) < chance
+                var skip = Math.floor(Math.random() * 101) < chance
                 if (!skip) {
                     var itemindex = Math.floor(Math.random() * imgarray.length)
                     fullurl = fullurl+SEP+imgarray[itemindex].id
