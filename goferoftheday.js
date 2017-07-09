@@ -14,7 +14,8 @@ function GoferOfTheDay(elementid) {
         imgnum = 0,
         imgloaded = 0,
         imgs = [],
-        objs={}
+        objs={},
+        classification = ""
 
 	// ensure that new has been used
 	if (!(this instanceof GoferOfTheDay)) {
@@ -38,6 +39,22 @@ function GoferOfTheDay(elementid) {
                     chance = 70
                 }
                 var skip = Math.floor(Math.random() * 101) < chance
+                if (skip) {
+                    switch (i){
+                        case 0:
+                            classification = "ghost_gofer"
+                            break
+                        case 1:
+                            if(classification.length==0){
+                                classification += ", eyeless_gofer"
+                            } else {
+                                classification = "eyeless_gofer"
+                            }
+                            break
+                        default:
+                            break
+                    }
+                }
                 if (!skip) {
                     var itemindex = Math.floor(Math.random() * imgarray.length)
                     fullurl = fullurl+SEP+imgarray[itemindex].id
@@ -48,8 +65,15 @@ function GoferOfTheDay(elementid) {
                     imgs.push(img)
                 } 
             }
+            if(imgnum == data.categoties.length){
+                classification = "max_level_gofer"
+            }
             if(imgnum == 0) {
                 alert("CONGRATS! YOU'VE GOT AN INVISIBLE GOFER!!!")
+                classification = "highly_improbable_cloaked_gofer"
+            }
+            if(classification.length==0){
+                classification = "normal_gofer"
             }
             console.log(fullurl)
             var link=document.getElementById(elementid+"_url")
@@ -58,7 +82,7 @@ function GoferOfTheDay(elementid) {
             }
             var level=document.getElementById(elementid+"_level")
             if(level){
-                level.innerHTML = 'gofer_level := "'+imgnum+'" <span class="comment">// min:"0", max:"'+data.categories.length+'"</span>'
+                level.innerHTML = 'gofer_level := "'+imgnum+'" <span class="comment">// min:"0", max:"'+data.categories.length+'"</span><br/>gofer_classification := "'+classification+'"'
                 objs["level"]=level
             }
             setTimeout(WaitImageLoadAndDraw, 40);
