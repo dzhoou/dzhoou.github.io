@@ -60,7 +60,7 @@ function GoferOfTheDay(elementid) {
             var level=document.getElementById(elementid+"_level")
             if(level){
                 level.innerHTML = '"'+imgnum+'"'
-                objs["level"]=link
+                objs["level"]=level
             }
             setTimeout(WaitImageLoadAndDraw, 40);
         },
