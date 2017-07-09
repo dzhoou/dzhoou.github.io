@@ -65,7 +65,7 @@ function GoferOfTheDay(elementid) {
                     imgs.push(img)
                 } 
             }
-            if(imgnum == data.categoties.length){
+            if(imgnum == data.categories.length){
                 classification = "max_level_gofer"
             }
             if(imgnum == 0) {
