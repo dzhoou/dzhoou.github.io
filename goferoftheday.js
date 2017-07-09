@@ -88,6 +88,8 @@ function GoferOfTheDay(elementid) {
             img = imgs[i]
             ctx.drawImage(img, 0, 0, img.width, img.height);
         }
+        //add animation class to canvas
+        c.classList.add("floatup")
     }
 	return this;	
 }
