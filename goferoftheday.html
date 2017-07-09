@@ -21,6 +21,7 @@
     }
     .gocode {
       color:white;
+      display:inline-block;
       font-family: Courier New, Courier, monospace;
       font-weight: bold;
     }
@@ -54,7 +55,7 @@
         transform: translateY(0%);
       }
       to {
-        transform: translateY(-500%);
+        transform: translateY(-360%);
       }
     }
   </style>
@@ -64,7 +65,7 @@
   <br/>
   <canvas id="gofer" width="975" height="1044"></canvas>
   <br/>
-  <span class="level gocode">var gofer_level = <span id="gofer_level">"TBD..."</span> <span class="comment">// min:"0", max:"8"</span></span>
+  <span id="gofer_levelline" class="level gocode">var gofer_level = <span id="gofer_level">"TBD..."</span> <span class="comment">// min:"0", max:"8"</span></span>
   <br/>
   <br/>
   <span class="courtesy gocode">var PageBy = <a target="_blank" href="https://github.com/dzhoou">"dzhoou"</a> <span class="comment">// clickable</span></span>
