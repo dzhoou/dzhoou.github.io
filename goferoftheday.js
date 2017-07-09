@@ -65,12 +65,14 @@ function GoferOfTheDay(elementid) {
                     imgs.push(img)
                 } 
             }
-            if(imgnum == data.categories.length){
-                classification = "max_level_gofer"
-            }
-            if(imgnum == 0) {
+            if (imgnum == 0) {
                 alert("CONGRATS! YOU'VE GOT AN INVISIBLE GOFER!!!")
                 classification = "highly_improbable_cloaked_gofer"
+            } else if (imgnum<4 && classification.length==0) {
+                // ghost/eyeless gofers cannot be spartan
+                classification = "spartan_gofer"
+            } else if (imgnum == data.categories.length) {
+                classification = "max_level_gofer"
             }
             if(classification.length==0){
                 classification = "normal_gofer"
