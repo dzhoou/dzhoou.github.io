@@ -13,7 +13,7 @@ function GoferOfTheDay(elementid) {
         emptyChance = [1, 1, 20, 50, 50, 50, 50, 90],
         imgnum = 0,
         imgloaded = 0,
-        imgs = [],
+        imgs = []
 
 	// ensure that new has been used
 	if (!(this instanceof GoferOfTheDay)) {
