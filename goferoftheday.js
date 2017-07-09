@@ -46,9 +46,9 @@ function GoferOfTheDay(elementid) {
                             break
                         case "1":
                             if(classification.length==0){
-                                classification += ", eyeless_gofer"
-                            } else {
                                 classification = "eyeless_gofer"
+                            } else {
+                                classification += ", eyeless_gofer"
                             }
                             break
                         default:
