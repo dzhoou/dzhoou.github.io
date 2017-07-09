@@ -39,7 +39,7 @@
       animation-fill-mode:forwards;
     }
     .floatup2 {
-      animation: floatup2 1.2s ease-out, popup 0s;
+      animation: floatup2 1.2s ease-out, popup 1.2s;
       animation-fill-mode:forwards;
     }
     @keyframes floatup {
@@ -59,10 +59,13 @@
       }
     }
     @keyframes popup {
-      from {
+      0% {
         opacity:0;
       }
-      to {
+      95% {
+        opacity:0;
+      }
+      100% {
         opacity:1;
       }
     }
