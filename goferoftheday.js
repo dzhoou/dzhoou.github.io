@@ -1,19 +1,19 @@
 function GoferOfTheDay(elementid) {
 	
-    var API_RESOURCE_URL = "https://gopherize.me/api/artwork/"
-        API_SAVE_URL = "https://gopherize.me/save?images="
-        API_BUCKET_URL = "https://storage.googleapis.com/gopherizeme.appspot.com/"
-        API_REGEX = /<img class='big-gopher' src='(.*)'>/g
-        SCALE = 0.5
+    var API_RESOURCE_URL = "https://gopherize.me/api/artwork/",
+        API_SAVE_URL = "https://gopherize.me/save?images=",
+        API_BUCKET_URL = "https://storage.googleapis.com/gopherizeme.appspot.com/",
+        API_REGEX = /<img class='big-gopher' src='(.*)'>/g,
+        SCALE = 0.5,
         SEP = "|",
         ready = false,
-        imgurl = ""
+        imgurl = "",
         fullurl = API_SAVE_URL,
         // % chances of: bodyless, eyeless, shirtless, hairless, facial-hairless, glassless, hatless, extra-less
-        emptyChance = [1, 1, 20, 50, 50, 50, 50, 90]
-        imgnum = 0
-        imgloaded = 0
-        imgs = []
+        emptyChance = [1, 1, 20, 50, 50, 50, 50, 90],
+        imgnum = 0,
+        imgloaded = 0,
+        imgs = [],
 
 	// ensure that new has been used
 	if (!(this instanceof GoferOfTheDay)) {
@@ -54,6 +54,10 @@ function GoferOfTheDay(elementid) {
             var link=document.getElementById(elementid+"_url")
             if(link){
                 link.href = fullurl
+            }
+            var level=document.getElementById(elementid+"_level")
+            if(level){
+                link.innerHTML = '"'+imgnum+'"'
             }
             setTimeout(WaitImageLoadAndDraw, 40);
         },
